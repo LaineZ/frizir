@@ -1,0 +1,22 @@
+[package]
+name = "frizir"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nb = "1"
+cortex-m = "0.7.6"
+cortex-m-rt = "0.7.1"
+# Panic behaviour, see https://crates.io/keywords/panic-impl for alternatives
+rtt-target = {version="0.3.1",  features = ["cortex-m"]}
+heapless = "0.8.0"
+panic-halt = "1.0.0"
+
+
+[dependencies.stm32f1xx-hal]
+version = "0.11.0"
+features = ["stm32f103"]
+
+[profile.dev]
+opt-level = 3
+lto = "thin"
